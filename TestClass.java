@@ -26,7 +26,7 @@ public class TestClass {
 		c.ajouter("Pommes");
 		c.ajouter("Bananes");
 		c.ajouter("Bananes");
-		assertEquals(400, c.getTotalPrice());
+		assertEquals(250, c.getTotalPrice());
 	}
 	
 	@Test
@@ -37,7 +37,7 @@ public class TestClass {
 		c.ajouter("Bananes");
 		c.ajouter("Bananes");
 		c.ajouter("Cerises");
-		assertEquals(530, c.getTotalPrice());
+		assertEquals(180, c.getTotalPrice());
 	}
 	
 	@Test
@@ -69,14 +69,109 @@ public class TestClass {
 		c.ajouter("Pommes");
 		c.ajouter("Cerises");
 		c.ajouter("Pommes");
-		assertEquals(710,c.getTotalPrice());
+		assertEquals(510,c.getTotalPrice());
 	}
 	
 	@Test
-	public void ite3a(){
+	public void ite3b(){
 		Caisse c = new Caisse();
-		c.ajouter("Pommes, Cerises, Bananes");
-		assertEquals(325,c.getTotalPrice());
+		c.ajouter("Pommes, Cerises, Bananes, Cerises");
+		assertEquals(380,c.getTotalPrice());
 	}
+	
+	@Test
+	public void ite3c(){
+		Caisse c = new Caisse();
+		c.ajouter("Pommes, Cerises, Bananes, Cerises, Pommes");
+		assertEquals(280,c.getTotalPrice());
+	}
+	
+	@Test
+	public void ite3d(){
+		Caisse c = new Caisse();
+		c.ajouter("Pommes, Cerises, Bananes, Cerises, Pommes");
+		c.ajouter("Cerises, Cerises, Pommes, Cerises");
+		assertEquals(585,c.getTotalPrice());
+	}
+	
+	@Test
+	public void ite3e(){
+		Caisse c = new Caisse();
+		c.ajouter("Cerises");
+		c.ajouter("Cerises");
+		c.ajouter("Bananes");
+		c.ajouter("Bananes");
+		assertEquals(280,c.getTotalPrice());
+	}
+	
+	@Test
+	public void ite4(){
+		Caisse c = new Caisse();
+		c.ajouter("Cerises");
+		c.ajouter("Pommes");
+		c.ajouter("Cerises");
+		c.ajouter("Bananes");
+		c.ajouter("Apples");
+		assertEquals(280,c.getTotalPrice());
+	}
+	
+	@Test
+	public void ite5(){
+		Caisse c = new Caisse();
+		c.ajouter("Mele");
+		c.ajouter("Apples");
+		c.ajouter("Apples");
+		c.ajouter("Pommes");
+		c.ajouter("Apples");
+		c.ajouter("Mele");
+		c.ajouter("Cerises");
+		c.ajouter("Cerises");
+		assertEquals(280,c.getTotalPrice());
+	}
+	
+	
+	@Test
+	public void ite5a(){
+		Caisse c = new Caisse();
+		c.ajouter("Mele, Apples, Apples, Pommes, Apples, Mele, Cerises, Cerises, Bananes");
+		assertEquals(430, c.getTotalPrice());
+	}
+	
+	@Test
+	public void ite6(){
+		Caisse c = new Caisse();
+		c.ajouter("Mele, Apples, Apples, Mele");
+		c.ajouter("Bananes");
+		assertEquals(200, c.getTotalPrice());
+	}
+	
+	@Test
+	public void ite6a(){
+		Caisse c = new Caisse();
+		c.ajouter("Mele, Apples, Apples, Pommes, Mele");
+		assertEquals(150, c.getTotalPrice());
+	}
+	
+	@Test
+	public void ite6b(){
+		Caisse c = new Caisse();
+		c.ajouter("Mele, Apples, Apples, Pommes, Mele");
+		c.ajouter("Mele, Apples, Apples, Pommes, Mele");
+		assertEquals(200, c.getTotalPrice());
+	}
+	
+	@Test
+	public void ite6c(){
+		Caisse c = new Caisse();
+		c.ajouter("Mele, Apples, Apples, Pommes, Mele");
+		c.ajouter("Mele, Apples, Apples, Pommes, Mele");
+		c.ajouter("Cerises");
+		c.ajouter("Bananes");
+		c.ajouter("Cerises");
+		c.ajouter("Pommes, Cerises");
+		assertEquals(455, c.getTotalPrice());
+	}
+	
+	
 
 }
